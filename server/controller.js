@@ -20,9 +20,8 @@ module.exports = {
     },
     deleteHouse: (req, res, next) => {
         const dbInstance = req.app.get('db');
-        console.log(req.params.id)
         const {id} = req.params
-        dbInstance.delete_house(id)
+        dbInstance.delete_house([id])
         .then((houses) => res.status(200).send(houses))
         .catch(err => {
             res.status(500).send({errorMessage: "Something went wrong."})

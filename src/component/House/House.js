@@ -12,7 +12,7 @@ function House (props){
             {props.city}
             {props.state}
             {props.zip}
-            <button onClick={() => props.deleteHouse(this.props.match.params.id)}>Delete</button>
+            <button onClick={() => props.deleteHouse(props.id)}>Delete</button>
         </div>
     )
 }

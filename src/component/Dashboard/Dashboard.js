@@ -4,14 +4,6 @@ import {Link} from 'react-router-dom'
 import Wizard from '../Wizard/Wizard'
 import axios from 'axios'
 
-
-// methods
-//     get all houses from database
-//     delete house from database
-
-
-
-
 class Dashboard extends Component {
 
     constructor(props){
@@ -45,13 +37,12 @@ class Dashboard extends Component {
     render() {
         console.log(this.state.houses)
         let displayedHouses = this.state.houses.map((house, i) => {
-            return <House key={i} name={house.name} address={house.address} city={house.city} state={house.state} zip={house.zip} deleteHouse={this.deleteHouse} />
+            return <House key={i} name={house.name} address={house.address} city={house.city} state={house.state} zip={house.zip} id={house.id} deleteHouse={this.deleteHouse} />
         })
         return (
             <div>
                 <p>Dashboard</p>
-                <Link to={`../Wizard/Wizard`} ><button>Add New Property</button></Link>
-                {/* <House /> */}
+                <Link to={`../Wizard/Step1`} ><button>Add New Property!</button></Link>
                 {displayedHouses}
             </div>
         )
